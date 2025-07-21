@@ -1,0 +1,37 @@
+@model List<TPLOCAL1.Models.Opinion>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="~/resources/Index.css" />
+        <title>HN - TP LOCAL</title>
+    </head>
+
+    <body>
+        @Html.Partial("_Header")
+        @Html.Partial("_Navigation")
+
+        <section>
+            <table>
+                <tr>
+                    <td colspan="3">List</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>First name</td>
+                    <td>Notice given</td>
+                </tr>
+                @foreach (var opinion in Model)
+                {
+                    <tr>
+                        <td>@opinion.LastName</td>
+                        <td>@opinion.FirstName</td>
+                        <td class="@(opinion.OpinionGiven == "O" ? "opinion-yes" : "opinion-no")">
+                            @(opinion.OpinionGiven == "O" ? "Yes" : "No")
+                        </td>
+                    </tr>
+                }
+            </table>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+@{
+    string currentPage = ViewContext.RouteData.Values["id"]?.ToString() ?? "Index";
+}
+
+<nav>
+    <ul>
+        <li><a href="/Home/Index/Index" class="@(currentPage == "Index" ? "active" : "")">Home</a></li>
+        <li><a href="/Home/Index/Form" class="@(currentPage == "Form" ? "active" : "")">Form</a></li>
+        <li><a href="/Home/Index/OpinionList" class="@(currentPage == "OpinionList" ? "active" : "")">Opinion list</a></li>
+    </ul>
+</nav>

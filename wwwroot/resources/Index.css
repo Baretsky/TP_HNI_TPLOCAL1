@@ -1,0 +1,79 @@
+.image {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1 {
+    margin-right: 170px;
+    margin-left: 170px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+Nav {
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+    color: white;
+    float: left;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: chocolate;
+}
+
+section {
+    margin-left: 170px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+td[colspan="2"] {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 8px;
+}
+
+td[colspan="3"] {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 8px;
+}
+
+.opinion-yes {
+    color: green;
+    font-weight: bold;
+}
+
+.opinion-no {
+    color: red;
+    font-weight: bold;
+}
+
+.active {
+    color: white !important;
+    text-decoration: underline;
+}

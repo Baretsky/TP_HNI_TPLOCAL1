@@ -1,0 +1,96 @@
+@model TPLOCAL1.Models.PersonalInfo
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="~/resources/Index.css" />
+        <title>HN - TP LOCAL</title>
+    </head>
+
+    <body>
+        @Html.Partial("_Header")
+        @Html.Partial("_Navigation")
+
+        <section>
+            @Html.ValidationSummary(false,"")
+            <form method="post" action="/Home/ValidationForm">
+                <table>
+                    <tr>
+                        <td colspan="2" style="text-align: center; font-weight: bold;">Personal Information</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>@Html.TextBoxFor(m => m.Name, new { @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td>Forename</td>
+                        <td>@Html.TextBoxFor(m => m.Forename, new { @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.Gender, new SelectList(new[] {
+                                new { Value = "Select a gender", Text = "Select a gender" },
+                                new { Value = "Man", Text = "Man" },
+                                new { Value = "Woman", Text = "Woman" },
+                                new { Value = "Other", Text = "Other" }
+                            }, "Value", "Text", Model.Gender), new { @required = "required" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>@Html.TextBoxFor(m => m.Address, new { @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td>Zip code</td>
+                        <td>@Html.TextBoxFor(m => m.ZipCode, new { @pattern = "^\\d{5}$", @title = "Must be 5 numeric characters", @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td>Town</td>
+                        <td>@Html.TextBoxFor(m => m.Town, new { @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td>@Html.TextBoxFor(m => m.Email, new { @type = "email", @pattern = "^[^@@\\s]+@@[^@@\\s]+\\.[^@@\\s]+$", @title = "Invalid email format", @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; font-weight: bold;">Training Information</td>
+                    </tr>
+                    <tr>
+                        <td>Start date training</td>
+                        <td>@Html.EditorFor(m => m.StartDateTraining, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @type = "date", @max = "2020-12-31", @required = "required" } })</td>
+                    </tr>
+                    <tr>
+                        <td>Type of training</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.TypeOfTraining, new SelectList(new[] {
+                                new { Value = "Select a course", Text = "Select a course" },
+                                new { Value = "Cobol Training", Text = "Cobol Training" },
+                                new { Value = "Object Training", Text = "Object Training" },
+                                new { Value = "Dual Skills Training", Text = "Dual Skills Training" }
+                            }, "Value", "Text", Model.TypeOfTraining), new { @required = "required" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; font-weight: bold;">Training Reviews</td>
+                    </tr>
+                    <tr>
+                        <td>Cobol Formation</td>
+                        <td>@Html.TextBoxFor(m => m.CobolFormation)</td>
+                    </tr>
+                    <tr>
+                        <td>C# Formation</td>
+                        <td>@Html.TextBoxFor(m => m.CSharpFormation)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Submit" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </body>
+
+</html>

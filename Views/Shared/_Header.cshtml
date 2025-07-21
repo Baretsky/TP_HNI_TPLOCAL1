@@ -1,0 +1,16 @@
+@{
+    string currentPage = ViewContext.RouteData.Values["id"]?.ToString() ?? "Index";
+    string pageTitle = currentPage switch
+    {
+        "Index" => "Welcome to the HN .Net MVC pratical work",
+        "Form" => "TP GroupeHN Form",
+        "OpinionList" => "TP GroupeHN Opinion List",
+        "ValidationForm" => "TP GroupeHN Validation Form",
+        _ => "HN .Net MVC pratical work"
+    };
+}
+
+<header>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <h1>@pageTitle</h1>
+</header>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "DDU-TPLOCAL1/1.0.0": {
+        "runtime": {
+          "DDU-TPLOCAL1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DDU-TPLOCAL1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

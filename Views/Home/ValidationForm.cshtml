@@ -1,0 +1,76 @@
+@model TPLOCAL1.Models.PersonalInfo
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="~/resources/Index.css" />
+        <title>HN - TP LOCAL</title>
+    </head>
+
+    <body>
+        @Html.Partial("_Header")
+        @Html.Partial("_Navigation")
+
+        <section>
+            <h2 style="text-align: center;">Your form has been taken into account</h2>
+            
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: bold;">Personal Information</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <td>Forename</td>
+                    <td>@Model.Forename</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>@Model.Gender</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>@Model.Address</td>
+                </tr>
+                <tr>
+                    <td>Zip code</td>
+                    <td>@Model.ZipCode</td>
+                </tr>
+                <tr>
+                    <td>Town</td>
+                    <td>@Model.Town</td>
+                </tr>
+                <tr>
+                    <td>Email address</td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: bold;">Training Information</td>
+                </tr>
+                <tr>
+                    <td>Start date training</td>
+                    <td>@Model.StartDateTraining.ToString("dd/MM/yyyy")</td>
+                </tr>
+                <tr>
+                    <td>Type of training</td>
+                    <td>@Model.TypeOfTraining</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; font-weight: bold;">Training Reviews</td>
+                </tr>
+                <tr>
+                    <td>Cobol Formation</td>
+                    <td>@Model.CobolFormation</td>
+                </tr>
+                <tr>
+                    <td>C# Formation</td>
+                    <td>@Model.CSharpFormation</td>
+                </tr>
+            </table>
+        </section>
+    </body>
+
+</html>
